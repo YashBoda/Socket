@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat APP</title>
+</head>
+<body bgcolor="green">
+    <h1 style="color:darkorange">Chatting App</h1>
+
+    <script src="/socket.io/socket.io.js"></script>
+<script>
+  const socket = io();
+
+  socket.on("connect_error", (err) => {
+  // the reason of the error, for example "xhr poll error"
+  console.log(err.message);
+
+  // some additional description, for example the status code of the initial HTTP response
+  console.log(err.description);
+
+  // some additional context, for example the XMLHttpRequest object
+  console.log(err.context);
+});
+</script>
+</body>
+</html>
